@@ -1,0 +1,24 @@
+version : "1"
+
+  services :
+  nginx:
+    build: nginx/
+    env_file: .env
+    container_name: NGINX
+    ports:
+    - "80:80"
+    restart: always
+  wordpress:
+    build: wordpress/
+    env_file: .env
+    container_name: WordPress
+    ports:
+      #- "80:80"
+    restart: always
+  mariadb:
+    build: mariadb/
+    env_file: .env
+    container_name: MariaDB
+    #ports:
+    #- "80:80"
+    restart: always
